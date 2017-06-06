@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+
+    <TextView
+        android:id="@+id/textViewAlarmradius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:gravity="left"
+        android:paddingBottom="15dp"
+        android:paddingLeft="35dp"
+        android:paddingTop="15dp"
+        android:text="Alarm Radius"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/TextColor"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textViewKM"
+        android:text="0.00 km"
+        android:textColor="@color/TextColor"
+        android:gravity="center_vertical|center|right|center_horizontal"
+        android:paddingRight="25dp"
+        android:layout_alignBottom="@+id/textViewAlarmradius"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_toEndOf="@+id/textViewAlarmradius" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/textViewAlarmradius"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:progress="20"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/seekBar"
+        android:id="@+id/map"
+        tools:context=".Activity.AddActivity"
+        map:uiCompass="true"
+        map:uiZoomControls="true"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ab47bc"
+    android:keepScreenOn="true"
+    android:id="@+id/fullscreen_activity"
+    tools:context="com.romanvytv.targetalarm2.AlarmActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="Wake up!"
+        android:textColor="#b39ddb"
+        android:textSize="24pt" />
+
+    <Button
+        android:text="Off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14pt"
+        android:textColor="#b2d9ed"
+        android:id="@+id/buttonStop"
+        android:background="#6a1b9a"
+        android:layout_gravity="bottom"/>
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock"
+        android:textColor="#b2d9ed"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60pt"
+        android:textSize="32pt" />
+
+
+</FrameLayout>
