@@ -28,8 +28,9 @@
             android:showOnLockScreen="true"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
+
         <service
-            android:name=".GeofenceService"
+            android:name=".GeofenceTransitionsIntentService"
             android:enabled="true"
             android:exported="true" />
 

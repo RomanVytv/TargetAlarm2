@@ -1,7 +1,6 @@
-package com.romanvytv.targetalarm2;
+package com.romanvytv.targetalarm2.unuse;
 
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,6 +15,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationServices;
+import com.romanvytv.targetalarm2.GeofenceHandler;
 
 
 public class GeofenceService extends Service
@@ -72,10 +72,10 @@ public class GeofenceService extends Service
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        Intent intent = new Intent(this, AlarmActivity.class);
+        /*Intent intent = new Intent(this, GeofenceTransitionsIntentService.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent geofencePendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.
-                FLAG_UPDATE_CURRENT);
+        PendingIntent geofencePendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.
+                FLAG_UPDATE_CURRENT);*/
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -88,14 +88,13 @@ public class GeofenceService extends Service
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        LocationServices.GeofencingApi.addGeofences(
-                googleApiClient,
-                geofenceHandler.addNewGeofence(
-                        MainActivity.getMyLatitiude(),
-                        MainActivity.getMyLongtitude(),
-                        MainActivity.getRadius()),
-                geofencePendingIntent
-        ).setResultCallback(this);
+//        LocationServices.GeofencingApi.addGeofences(
+//                googleApiClient,
+//                geofenceHandler.addNewGeofence(
+//                        MainActivity.getMyLatitiude(),
+//                        MainActivity.getMyLongtitude(),
+//                        MainActivity.getRadius()),
+//                        MainActivity.geofencePendingIntentLaunch).setResultCallback(this);
     }
 
     @Override

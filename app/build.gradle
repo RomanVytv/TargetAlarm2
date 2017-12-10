@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.romanvytv.targetalarm2"
         minSdkVersion 21
-        targetSdkVersion 24
+        targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
-        versionName "1.0"
+        versionName ".0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,9 +25,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.google.android.gms:play-services:10.2.6'
-    compile 'com.google.code.gson:gson:2.6.1'
-    compile 'com.android.support:support-v4:24.2.1'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.google.android.gms:play-services:11.6.0'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.android.support:support-v4:26.0.2'
     testCompile 'junit:junit:4.12'
 }

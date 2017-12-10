@@ -2,19 +2,13 @@ package com.romanvytv.targetalarm2;
 
 public class Target {
 
-    private int radius = 0;
-    private double latitude = 0;
-    private double longtitude = 0;
+    private int radius = 50;
+    private double latitude;
+    private double longtitude;
+    private boolean running = false;
 
 
-
-
-    //public static ArrayList<Target> targets = new ArrayList<Target>();//Gson().fromJson(AddActivity.getJsonStrTargets(),
-    //new TypeToken<ArrayList<Target>>(){}.getType()  );
-
-    //public static Target target = new Target();
-
-    public Target( int radius, double longtitude, double latitude) {
+    public Target(int radius, double longtitude, double latitude) {
         this.radius = radius;
         this.longtitude = longtitude;
         this.latitude = latitude;
@@ -48,15 +42,14 @@ public class Target {
         this.longtitude = longtitude;
     }
 
-    public boolean isRunning() {
+    public boolean isEnabled() {
         return running;
     }
 
-    public void setRunning(boolean running) {
+    public void setEnabled(boolean running) {
         this.running = running;
     }
 
-    private boolean running = false;
 
 }
 
